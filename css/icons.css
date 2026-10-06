@@ -1,0 +1,26 @@
+/* Material Design Icons 2.0.46: le stesse icone usate nel sito originale. */
+@font-face {
+  font-family: 'Material Design Icons';
+  src: url('../assets/materialdesignicons-2.0.46.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.menu-icon::before {
+  display: inline-block;
+  font-family: 'Material Design Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 1.15em;
+  vertical-align: -.1em;
+  margin-right: .25em;
+  -webkit-font-smoothing: antialiased;
+}
+.menu-icon--home:before{content:"\F2DC"}
+.menu-icon--information-outline:before{content:"\F2FD"}
+.menu-icon--camera:before{content:"\F100"}
+.menu-icon--school:before{content:"\F474"}
+.menu-icon--bank:before{content:"\F070"}
+.menu-icon--email:before{content:"\F1EE"}
+.menu-icon--facebook-box:before{content:"\F20D"}

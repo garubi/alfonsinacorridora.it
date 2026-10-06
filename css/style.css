@@ -1,0 +1,90 @@
+/* 1. Base e tipografia */
+:root { --ink: #151515; --paper: #fff; --title-font: 'Marck Script', cursive; --body-font: 'Bitter', Georgia, serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--body-font); line-height: 2; }
+a { color: inherit; text-underline-offset: .2em; }
+a:hover { text-decoration: underline; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--title-font); font-weight: 700; line-height: 1.12; margin: 0 0 1.5rem; }
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2.25rem; }
+p { margin: 0 0 1.5rem; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #8c3939; outline-offset: 4px; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; padding: .5rem; background: white; }
+.skip-link:focus { top: 1rem; }
+.content { width: 70%; margin: auto; padding: 3rem 0; }
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.section-heading { text-align: center; padding: 3rem 1.5rem; }
+.section-heading p { margin: 0; }
+/* 2. Navigazione */
+.site-header { min-height: 100px; padding: 1.25rem 3%; display: flex; align-items: center; gap: 2.5rem; background: #f4f1ec; }
+.brand { font: bold 2.25rem/1.15 var(--title-font); text-decoration: none; flex-shrink: 0; }
+.site-header nav { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; font-family: Arial, sans-serif; font-size: 1rem; }
+.site-header nav a { text-decoration: none; }
+.menu-toggle { display: none; }
+/* 3. Racconto: immagini e testi alternati */
+.story { display: grid; grid-template-columns: 1fr 2fr; position: relative; background: url('../assets/sfondo-alberi-nebbia.jpg') center/cover; }
+.story__text { background: #ffffff80; padding: 3rem 10%; display: flex; flex-direction: column; justify-content: center; font-size: 1.5rem; }
+.story__image { width: 100%; height: 100%; min-height: 500px; aspect-ratio: 1; object-fit: cover; }
+.story--reverse { grid-template-columns: 2fr 1fr; }
+.story--reverse .story__image { grid-column: 1; grid-row: 1; }
+.story--reverse .story__text { grid-column: 2; grid-row: 1; }
+.story--0 .story__image { object-position: 34.3% 88.89%; }
+.story--1 .story__image { filter: contrast(1.3) sepia(.3) saturate(1.3) hue-rotate(-10deg) brightness(.95); }
+.story--2 .story__image { object-position: left center; filter: contrast(1.3) brightness(.8) sepia(.3) saturate(1.5) hue-rotate(-20deg); }
+/* 4. Video e galleria */
+.video { aspect-ratio: 16/9; background: #111; }
+.video iframe { display: block; width: 100%; height: 100%; border: 0; }
+.gallery__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.gallery__grid a { display: block; overflow: hidden; }
+.gallery__grid img { width: 100%; height: 200px; object-fit: cover; transition: transform .2s; }
+.gallery__grid a:hover img { transform: scale(1.03); }
+#lightbox { padding: 0; border: 0; background: #111; max-width: 95vw; max-height: 95vh; }
+#lightbox::backdrop { background: #000e; }
+#lightbox img { max-height: 90vh; max-width: 90vw; object-fit: contain; }
+#lightbox button { position: absolute; z-index: 1; border: 0; background: #0009; color: white; font: 2.5rem/1 Arial, sans-serif; padding: .5rem; }
+.lightbox__close { right: 0; top: 0; }
+.lightbox__previous { left: 0; top: 45%; }
+.lightbox__next { right: 0; top: 45%; }
+/* 5. Scuole, tournée, informazioni */
+.schools { background: linear-gradient(#ffffffdc, #ffffffdc), url('../assets/alfonsina-corridora-spettacolo-pubblico.jpg') center/cover; font-size: 1.5rem; }
+.schools .content { padding-top: 0; }
+.schools h3 { font-family: var(--body-font); font-weight: 400; font-size: 2rem; }
+.tour__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; margin: 2rem 0; }
+.tour__year ul { list-style: none; margin: 0; padding: 0; }
+.tour__year li { margin: 0; }
+.technical { background: linear-gradient(#ffffffca, #ffffffca), url('../assets/alfonsina-corridora-palco-titolo.jpg') center 69.32%/cover; font-size: 1.125rem; }
+/* 6. Modulo contatti */
+.contact { font-size: 1.125rem; }
+#contact-form { display: flex; flex-direction: column; align-items: stretch; }
+#contact-form label { line-height: 1.4; margin: .6rem 0 .2rem; }
+#contact-form input, #contact-form textarea { width: 100%; padding: .55rem .7rem; background: white; border: 1px solid #777; border-radius: 0; font-size: 1rem; }
+#contact-form textarea { resize: vertical; }
+#contact-form button, .menu-toggle { padding: .45rem 1.2rem; border: 1px solid #111; background: #111; color: white; border-radius: 3px; align-self: flex-start; margin-top: .8rem; }
+#contact-form button:disabled { opacity: .6; cursor: wait; }
+#form-status { font-size: 1rem; margin-top: .75rem; }
+/* 7. Schermi piccoli e preferenze di accessibilità */
+@media (max-width: 1100px) { .site-header { gap: 1.5rem; flex-wrap: wrap; } .site-header nav { gap: 1rem; } .content { width: 85%; } }
+@media (max-width: 767px) {
+  .site-header { justify-content: space-between; padding: 1rem 5%; min-height: 80px; }
+  .brand { font-size: 1.9rem; }
+  .menu-toggle { display: block; margin: 0; }
+  .site-header nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: .3rem; }
+  .site-header nav.is-open { display: flex; }
+  .site-header nav a { padding: .35rem; }
+  h1 { font-size: 3rem; } h2 { font-size: 2.5rem; }
+  .story, .story--reverse { grid-template-columns: 1fr; }
+  .story__text { padding: 2.5rem 7%; font-size: 1.25rem; }
+  .story__image { min-height: 0; aspect-ratio: 4/3; }
+  .story--reverse .story__image, .story--reverse .story__text { grid-column: auto; grid-row: auto; }
+  .two-columns, .tour__grid { grid-template-columns: 1fr; }
+  .content { width: 86%; padding: 2.5rem 0; }
+  .schools { font-size: 1.2rem; } .schools h3 { font-size: 1.5rem; }
+  .gallery__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .gallery__grid img { height: 160px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .gallery__grid img { transition: none; } }
