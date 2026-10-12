@@ -15,5 +15,5 @@ Nel tag form inserire il proprio endpoint nell'attributo data-formspree-endpoint
 - js/main.js: menu, galleria e invio Formspree
 - assets/: immagini e font locali
 
-## Limiti della prima versione
-Replica strutturale dell'originale, con HTML ricostruito: il confronto visivo desktop/mobile resta da effettuare. Lo sfondo della navigazione originale non era scaricabile (HTTP 403) ed è sostituito da un colore chiaro. YouTube, Facebook, il PDF su Dropbox e Formspree restano servizi esterni. Il link PDF è conservato ma non verificato. Nessun messaggio di prova è stato inviato. Non è stata modificata la configurazione del dominio originale.
+## Dove è pubblicato
+Il sito è pubblicato su GitHub Pages con mappato il fominio alfonsinacorridora.it
